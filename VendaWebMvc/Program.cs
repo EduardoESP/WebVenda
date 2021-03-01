@@ -14,6 +14,7 @@ namespace VendaWebMvc
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
+            Console.Write("Teste");
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
