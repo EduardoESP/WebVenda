@@ -1,0 +1,4 @@
+C:\Users\opsoncbm\source\repos\VendaWebMvc\VendaWebMvc\obj\Debug\netcoreapp2.1\VendaWebMvc.csprojAssemblyReference.cache
+C:\Users\opsoncbm\source\repos\VendaWebMvc\VendaWebMvc\obj\Debug\netcoreapp2.1\VendaWebMvc.AssemblyInfoInputs.cache
+C:\Users\opsoncbm\source\repos\VendaWebMvc\VendaWebMvc\obj\Debug\netcoreapp2.1\VendaWebMvc.AssemblyInfo.cs
+C:\Users\opsoncbm\source\repos\VendaWebMvc\VendaWebMvc\obj\Debug\netcoreapp2.1\VendaWebMvc.csproj.CoreCompileInputs.cache
