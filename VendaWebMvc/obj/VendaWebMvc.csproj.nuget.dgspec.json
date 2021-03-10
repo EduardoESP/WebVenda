@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\opsoncbm\\source\\repos\\VendaWebMvc\\VendaWebMvc\\VendaWebMvc.csproj": {}
+    "C:\\Users\\eduardosantana.OCYAN\\Desktop\\WebVenda\\VendaWebMvc\\VendaWebMvc.csproj": {}
   },
   "projects": {
-    "C:\\Users\\opsoncbm\\source\\repos\\VendaWebMvc\\VendaWebMvc\\VendaWebMvc.csproj": {
+    "C:\\Users\\eduardosantana.OCYAN\\Desktop\\WebVenda\\VendaWebMvc\\VendaWebMvc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\opsoncbm\\source\\repos\\VendaWebMvc\\VendaWebMvc\\VendaWebMvc.csproj",
+        "projectUniqueName": "C:\\Users\\eduardosantana.OCYAN\\Desktop\\WebVenda\\VendaWebMvc\\VendaWebMvc.csproj",
         "projectName": "VendaWebMvc",
-        "projectPath": "C:\\Users\\opsoncbm\\source\\repos\\VendaWebMvc\\VendaWebMvc\\VendaWebMvc.csproj",
-        "packagesPath": "C:\\Users\\opsoncbm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\opsoncbm\\source\\repos\\VendaWebMvc\\VendaWebMvc\\obj\\",
+        "projectPath": "C:\\Users\\eduardosantana.OCYAN\\Desktop\\WebVenda\\VendaWebMvc\\VendaWebMvc.csproj",
+        "packagesPath": "C:\\Users\\eduardosantana.OCYAN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eduardosantana.OCYAN\\Desktop\\WebVenda\\VendaWebMvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\opsoncbm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eduardosantana.OCYAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
-              "version": "[2.1.1, )"
+              "version": "[3.1.0, )"
             }
           },
           "imports": [

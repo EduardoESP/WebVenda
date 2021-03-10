@@ -28,7 +28,7 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.12",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.12",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.5",
-          "Pomelo.EntityFrameworkCore.MySql": "2.1.1",
+          "Pomelo.EntityFrameworkCore.MySql": "3.1.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -129,14 +129,14 @@
           "Microsoft.Extensions.Identity.Stores": "3.1.0.0",
           "Microsoft.Extensions.Localization.Abstractions": "3.1.0.0",
           "Microsoft.Extensions.Localization": "3.1.0.0",
-          "Microsoft.Extensions.Logging.Configuration.Reference": "3.1.0.0",
-          "Microsoft.Extensions.Logging.Console.Reference": "3.1.0.0",
+          "Microsoft.Extensions.Logging.Configuration": "3.1.0.0",
+          "Microsoft.Extensions.Logging.Console": "3.1.0.0",
           "Microsoft.Extensions.Logging.Debug": "3.1.0.0",
           "Microsoft.Extensions.Logging.EventLog": "3.1.0.0",
           "Microsoft.Extensions.Logging.EventSource": "3.1.0.0",
           "Microsoft.Extensions.Logging.TraceSource": "3.1.0.0",
           "Microsoft.Extensions.ObjectPool": "3.1.0.0",
-          "Microsoft.Extensions.Options.ConfigurationExtensions.Reference": "3.1.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "3.1.0.0",
           "Microsoft.Extensions.Options.DataAnnotations": "3.1.0.0",
           "Microsoft.Extensions.WebEncoders": "3.1.0.0",
           "Microsoft.JSInterop": "3.1.0.0",
@@ -707,9 +707,6 @@
             "assemblyVersion": "3.1.12.0",
             "fileVersion": "3.100.1221.7003"
           }
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {}
         }
       },
       "Microsoft.EntityFrameworkCore.Relational/3.1.12": {
@@ -909,19 +906,6 @@
           "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.Logging.Configuration/2.1.1": {
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "3.1.12",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "2.1.1"
-        }
-      },
-      "Microsoft.Extensions.Logging.Console/2.1.1": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "3.1.12",
-          "Microsoft.Extensions.Logging": "3.1.12",
-          "Microsoft.Extensions.Logging.Configuration": "2.1.1"
-        }
-      },
       "Microsoft.Extensions.Options/3.1.12": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.12",
@@ -935,14 +919,6 @@
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Options.dll": {}
-        }
-      },
-      "Microsoft.Extensions.Options.ConfigurationExtensions/2.1.1": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "3.1.12",
-          "Microsoft.Extensions.Configuration.Binder": "3.1.12",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.12",
-          "Microsoft.Extensions.Options": "3.1.12"
         }
       },
       "Microsoft.Extensions.Primitives/3.1.12": {
@@ -1184,15 +1160,15 @@
           "System.Security.Principal.Windows": "4.5.0"
         }
       },
-      "MySqlConnector/0.42.1": {
+      "MySqlConnector/0.61.0": {
         "runtime": {
-          "lib/netcoreapp2.1/MySqlConnector.dll": {
-            "assemblyVersion": "0.42.1.0",
-            "fileVersion": "0.42.1.0"
+          "lib/netcoreapp3.0/MySqlConnector.dll": {
+            "assemblyVersion": "0.61.0.0",
+            "fileVersion": "0.61.0.0"
           }
         },
         "compile": {
-          "lib/netcoreapp2.1/MySqlConnector.dll": {}
+          "lib/netcoreapp3.0/MySqlConnector.dll": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -1268,37 +1244,35 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
-      "Pomelo.EntityFrameworkCore.MySql/2.1.1": {
+      "Pomelo.EntityFrameworkCore.MySql/3.1.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "3.1.12",
           "Microsoft.EntityFrameworkCore.Relational": "3.1.12",
-          "Microsoft.Extensions.Logging.Console": "2.1.1",
-          "MySqlConnector": "0.42.1",
-          "Pomelo.JsonObject": "1.1.1"
+          "MySqlConnector": "0.61.0",
+          "Pomelo.JsonObject": "2.2.1"
         },
         "runtime": {
           "lib/netstandard2.0/Pomelo.EntityFrameworkCore.MySql.dll": {
-            "assemblyVersion": "2.1.1.0",
-            "fileVersion": "2.1.1.0"
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/Pomelo.EntityFrameworkCore.MySql.dll": {}
         }
       },
-      "Pomelo.JsonObject/1.1.1": {
+      "Pomelo.JsonObject/2.2.1": {
         "dependencies": {
-          "NETStandard.Library": "1.6.1",
+          "Microsoft.CSharp": "4.7.0",
           "Newtonsoft.Json": "11.0.2"
         },
         "runtime": {
-          "lib/netstandard1.3/Pomelo.JsonObject.dll": {
-            "assemblyVersion": "1.1.1.0",
-            "fileVersion": "1.1.1.0"
+          "lib/netstandard2.0/Pomelo.JsonObject.dll": {
+            "assemblyVersion": "2.2.1.0",
+            "fileVersion": "2.2.1.0"
           }
         },
         "compile": {
-          "lib/netstandard1.3/Pomelo.JsonObject.dll": {}
+          "lib/netstandard2.0/Pomelo.JsonObject.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -3053,13 +3027,13 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.Logging.Configuration.Reference/3.1.0.0": {
+      "Microsoft.Extensions.Logging.Configuration/3.1.0.0": {
         "compile": {
           "Microsoft.Extensions.Logging.Configuration.dll": {}
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.Logging.Console.Reference/3.1.0.0": {
+      "Microsoft.Extensions.Logging.Console/3.1.0.0": {
         "compile": {
           "Microsoft.Extensions.Logging.Console.dll": {}
         },
@@ -3095,7 +3069,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.Options.ConfigurationExtensions.Reference/3.1.0.0": {
+      "Microsoft.Extensions.Options.ConfigurationExtensions/3.1.0.0": {
         "compile": {
           "Microsoft.Extensions.Options.ConfigurationExtensions.dll": {}
         },
@@ -4314,33 +4288,12 @@
       "path": "microsoft.extensions.logging.abstractions/3.1.12",
       "hashPath": "microsoft.extensions.logging.abstractions.3.1.12.nupkg.sha512"
     },
-    "Microsoft.Extensions.Logging.Configuration/2.1.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Z3AzFM21fL/ux0kZAbTE+HDPQ46vuh0dqzhlBm6w7/029RxZLvV6bUUsAs70i2r4JfShhCjBYZ+bTjR42diFVA==",
-      "path": "microsoft.extensions.logging.configuration/2.1.1",
-      "hashPath": "microsoft.extensions.logging.configuration.2.1.1.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Logging.Console/2.1.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6dYephpuOacAiXE6eJcWu0myEub8qglrWSgzsYUdzWXGanAAlTVzpms/Wp5yeLpw4hsP8KFey8ySwt5KvVv/uw==",
-      "path": "microsoft.extensions.logging.console/2.1.1",
-      "hashPath": "microsoft.extensions.logging.console.2.1.1.nupkg.sha512"
-    },
     "Microsoft.Extensions.Options/3.1.12": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-by2/frdg182EdpUkFw+2+h+POQTUCVNZRGWgFZKKZhxfuN+hJZFAaGMAuo1ouLexMa1PGTqWAgw/zaZ2WwU71Q==",
       "path": "microsoft.extensions.options/3.1.12",
       "hashPath": "microsoft.extensions.options.3.1.12.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Options.ConfigurationExtensions/2.1.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-NpGh3Y/VOBs6hvjKHMsdbtrvGvMO+cBqZ7YT/Rc4iFy0C4ogSnl1lBAq69L1LS6gzlwDBZDZ7WcvzSDzk5zfzA==",
-      "path": "microsoft.extensions.options.configurationextensions/2.1.1",
-      "hashPath": "microsoft.extensions.options.configurationextensions.2.1.1.nupkg.sha512"
     },
     "Microsoft.Extensions.Primitives/3.1.12": {
       "type": "package",
@@ -4475,12 +4428,12 @@
       "path": "microsoft.win32.registry/4.5.0",
       "hashPath": "microsoft.win32.registry.4.5.0.nupkg.sha512"
     },
-    "MySqlConnector/0.42.1": {
+    "MySqlConnector/0.61.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7jS8P+XOw+vS/reuwEEGhtAKvagiOEtOsu5/46Bnuiw+DgOjAFgMSojkiVaZi9DHcatP8jgmjY67iDGVZByQng==",
-      "path": "mysqlconnector/0.42.1",
-      "hashPath": "mysqlconnector.0.42.1.nupkg.sha512"
+      "sha512": "sha512-E01yibVzCkVOmhNsUb+B4amjQKfKFlGiR1huNd6Q8aTCqBrACo0I3JMKvJBMpZfYhAsR8bqB9496PwcGpr+LuQ==",
+      "path": "mysqlconnector/0.61.0",
+      "hashPath": "mysqlconnector.0.61.0.nupkg.sha512"
     },
     "NETStandard.Library/1.6.1": {
       "type": "package",
@@ -4503,19 +4456,19 @@
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
     },
-    "Pomelo.EntityFrameworkCore.MySql/2.1.1": {
+    "Pomelo.EntityFrameworkCore.MySql/3.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-V/W72zl2iWUWdSvj0c9chzssv9OUdSbEiEeOmP3D5Co5CbAtOiyyFwov0hVN+D/VNGhUQGszUltIWuoYEjTHhQ==",
-      "path": "pomelo.entityframeworkcore.mysql/2.1.1",
-      "hashPath": "pomelo.entityframeworkcore.mysql.2.1.1.nupkg.sha512"
+      "sha512": "sha512-cm43LBLO2/RWn4fniC/JFpqLy6deHbFK7oBOryzAkjl67UJotmQYXf4I+cjCFBLEApdxtLboBovZ+ckbGYZzjQ==",
+      "path": "pomelo.entityframeworkcore.mysql/3.1.0",
+      "hashPath": "pomelo.entityframeworkcore.mysql.3.1.0.nupkg.sha512"
     },
-    "Pomelo.JsonObject/1.1.1": {
+    "Pomelo.JsonObject/2.2.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-erkYG/OW1LloSwDFGeS9MvVjy1FLmaV3k8GK/GMR8D3sSDEylZogoLdLiaOFc92+zTen92rG6XGiioNacSlg0A==",
-      "path": "pomelo.jsonobject/1.1.1",
-      "hashPath": "pomelo.jsonobject.1.1.1.nupkg.sha512"
+      "sha512": "sha512-VHPk3Yf7nDt+tZMC1M4oAoc3bgTYsOrap3VTjn//vd91b/nfquAbAeq1k0Lf7mPt8J7imLd9Pbzm50uB5euuZA==",
+      "path": "pomelo.jsonobject/2.2.1",
+      "hashPath": "pomelo.jsonobject.2.2.1.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
@@ -5794,12 +5747,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Logging.Configuration.Reference/3.1.0.0": {
+    "Microsoft.Extensions.Logging.Configuration/3.1.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Logging.Console.Reference/3.1.0.0": {
+    "Microsoft.Extensions.Logging.Console/3.1.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -5829,7 +5782,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Options.ConfigurationExtensions.Reference/3.1.0.0": {
+    "Microsoft.Extensions.Options.ConfigurationExtensions/3.1.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
