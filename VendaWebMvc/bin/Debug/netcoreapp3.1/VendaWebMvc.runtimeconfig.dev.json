@@ -2,7 +2,7 @@
   "runtimeOptions": {
     "additionalProbingPaths": [
       "C:\\Users\\opsoncbm\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\eduardosantana.OCYAN\\.nuget\\packages"
+      "C:\\Users\\opsoncbm\\.nuget\\packages"
     ]
   }
 }
