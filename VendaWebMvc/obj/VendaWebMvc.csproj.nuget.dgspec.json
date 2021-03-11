@@ -10,11 +10,11 @@
         "projectUniqueName": "C:\\Users\\eduardosantana.OCYAN\\Desktop\\WebVenda\\VendaWebMvc\\VendaWebMvc.csproj",
         "projectName": "VendaWebMvc",
         "projectPath": "C:\\Users\\eduardosantana.OCYAN\\Desktop\\WebVenda\\VendaWebMvc\\VendaWebMvc.csproj",
-        "packagesPath": "C:\\Users\\opsoncbm\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\eduardosantana.OCYAN\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\eduardosantana.OCYAN\\Desktop\\WebVenda\\VendaWebMvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\opsoncbm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eduardosantana.OCYAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
