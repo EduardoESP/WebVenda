@@ -355,3 +355,4 @@ C:\Users\eduardosantana.OCYAN\Desktop\WebVenda\VendaWebMvc\obj\Debug\netcoreapp3
 C:\Users\eduardosantana.OCYAN\Desktop\WebVenda\VendaWebMvc\obj\Debug\netcoreapp3.1\VendaWebMvc.pdb
 C:\Users\eduardosantana.OCYAN\Desktop\WebVenda\VendaWebMvc\obj\Debug\netcoreapp3.1\VendaWebMvc.genruntimeconfig.cache
 C:\Users\eduardosantana.OCYAN\Desktop\WebVenda\VendaWebMvc\obj\Debug\netcoreapp3.1\Razor\Views\Vendedores\Index.cshtml.g.cs
+C:\Users\eduardosantana.OCYAN\Desktop\WebVenda\VendaWebMvc\obj\Debug\netcoreapp3.1\Razor\Views\Vendedores\Criar.cshtml.g.cs
