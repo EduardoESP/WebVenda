@@ -4,17 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using VendaWebMvc.Models;
+using VendaWebMvc.Models.ViewModel;
 using VendaWebMvc.Services;
 
 namespace VendaWebMvc.Controllers
 {
     public class VendedoresController : Controller
     {
+        //Dependencias dos serviços
         private readonly VendedoresService _servicoVendedor;
 
-        public VendedoresController(VendedoresService servicoVendedor)
+        private readonly DepartamentoService _departamentoService;
+
+        public VendedoresController(VendedoresService servicoVendedor, DepartamentoService departamentoService)
         {
             _servicoVendedor = servicoVendedor;
+            _departamentoService = departamentoService;
 
         }
 
@@ -27,7 +32,9 @@ namespace VendaWebMvc.Controllers
 
         public IActionResult Criar()
         {
-            return View();
+            var departamentos = _departamentoService.ListarDepartamento();
+            var viewModel = new FormularioVendedorViewModel { Departamento = departamentos };
+            return View(viewModel);
         }
 
         [HttpPost]
