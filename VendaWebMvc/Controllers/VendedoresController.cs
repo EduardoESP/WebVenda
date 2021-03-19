@@ -46,5 +46,30 @@ namespace VendaWebMvc.Controllers
 
         }
 
+        public IActionResult Deletar(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _servicoVendedor.EncontrarPorId(id.Value);
+            if(obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Deletar(int id)
+        {
+            _servicoVendedor.Remover(id);
+            return RedirectToAction(nameof(Index));
+
+        }
+
     }
 }
