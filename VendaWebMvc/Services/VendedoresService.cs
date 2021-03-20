@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,7 +33,7 @@ namespace VendaWebMvc.Services
 
         public Vendedor EncontrarPorId(int id)
         {
-            return _contexto.Vendedor.FirstOrDefault(obj => obj.Id == id);
+            return _contexto.Vendedor.Include(obj => obj.Departamento).FirstOrDefault(obj => obj.Id == id);
         }
 
         public void Remover(int id)

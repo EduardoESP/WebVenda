@@ -71,5 +71,20 @@ namespace VendaWebMvc.Controllers
 
         }
 
+        public IActionResult Detalhe(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _servicoVendedor.EncontrarPorId(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
+        }
     }
 }
