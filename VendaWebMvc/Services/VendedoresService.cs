@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using VendaWebMvc.Data;
 using VendaWebMvc.Models;
+using VendaWebMvc.Services.Exceptions;
 
 namespace VendaWebMvc.Services
 {
@@ -41,6 +42,23 @@ namespace VendaWebMvc.Services
             var obj = _contexto.Vendedor.Find(id);
             _contexto.Vendedor.Remove(obj);
             _contexto.SaveChanges();
+        }
+
+        public void Update(Vendedor obj)
+        {
+            if (! _contexto.Vendedor.Any(x=> x.Id == obj.Id))
+            {
+                throw new NotFoundException("Id não encontrado");
+            }
+            try
+            {
+                _contexto.Update(obj);
+                _contexto.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException e)
+            {
+                throw new DbUpdateConcurrencyException(e.Message);
+            }
         }
     }
 }
