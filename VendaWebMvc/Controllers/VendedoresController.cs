@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using VendaWebMvc.Models;
@@ -32,7 +33,8 @@ namespace VendaWebMvc.Controllers
         }
 
         public IActionResult Criar()
-        {
+         {
+            
             var departamentos = _departamentoService.ListarDepartamento();
             var viewModel = new FormularioVendedorViewModel { Departamento = departamentos };
             return View(viewModel);
@@ -42,6 +44,12 @@ namespace VendaWebMvc.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Criar(Vendedor vendedor)
         {
+            if (!ModelState.IsValid)
+            {
+                var departamento = _departamentoService.ListarDepartamento();
+                var viewModel = new FormularioVendedorViewModel { Vendedor = vendedor, Departamento = departamento };
+                return View(viewModel);
+            }
             _servicoVendedor.Inserir(vendedor);
             return RedirectToAction("Index");
 
@@ -51,13 +59,13 @@ namespace VendaWebMvc.Controllers
         {
             if(id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Erro), new {mensagem = "ID NÃO FORNECIDO" });
             }
 
             var obj = _servicoVendedor.EncontrarPorId(id.Value);
             if(obj == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Erro), new { mensagem = "ID NÃO ENCONTRADO" });
             }
 
             return View(obj);
@@ -76,13 +84,13 @@ namespace VendaWebMvc.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Erro), new { mensagem = "ID NÃO FORNECIDO" });
             }
 
             var obj = _servicoVendedor.EncontrarPorId(id.Value);
             if (obj == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Erro), new { mensagem = "ID NÃO ENCONTRADO" });
             }
 
             return View(obj);
@@ -92,13 +100,13 @@ namespace VendaWebMvc.Controllers
         {
             if(id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Erro), new { mensagem = "ID NÃO FORNECIDO" });
             }
 
             var obj = _servicoVendedor.EncontrarPorId(id.Value);
             if(obj == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Erro), new { mensagem = "ID NÃO ENCONTRADO" });
             }
 
             List<Departamento> departamento = _departamentoService.ListarDepartamento();
@@ -110,9 +118,15 @@ namespace VendaWebMvc.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Editar(int id, Vendedor vendedor)
         {
-            if(id != vendedor.Id)
+            if (!ModelState.IsValid)
             {
-                return BadRequest();
+                var departamento = _departamentoService.ListarDepartamento();
+                var viewModel = new FormularioVendedorViewModel { Vendedor = vendedor, Departamento = departamento };
+                return View(viewModel);
+            }
+            if (id != vendedor.Id)
+            {
+                return RedirectToAction(nameof(Erro), new { mensagem = "ID NÃO CORRESPONDE" });
             }
 
             try
@@ -120,14 +134,24 @@ namespace VendaWebMvc.Controllers
                 _servicoVendedor.Update(vendedor);
                 return RedirectToAction(nameof(Index));
             }
-            catch (NotFoundException)
+            catch (NotFoundException e)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Erro), new { mensagem = e.Message });
             }
-            catch (DbConcurrencyException)
+            catch (DbConcurrencyException e)
             {
-                return BadRequest();
+                return RedirectToAction(nameof(Erro), new { mensagem = e.Message });
             }
+        }
+
+        public IActionResult Erro(string mensagem)
+        {
+            var viewModel = new ErrorViewModel
+            {
+                Mensagem = mensagem,
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            };
+            return View(viewModel);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,12 +9,25 @@ namespace VendaWebMvc.Models
     public class Vendedor
     {
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "{0} obrigatório")]
+        [StringLength(60, MinimumLength = 3, ErrorMessage = "{0} deve ter entre 3 e 60 caracteres")]
         public string Nome { get; set; }
 
+        [EmailAddress(ErrorMessage = "Entre com um e-mail válido")]
+        [Required(ErrorMessage = "{0} obrigatório")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
+        [Required(ErrorMessage = "{0} obrigatório")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString ="{0:dd/MM/yyyy}")]
         public DateTime Nascimento { get; set; }
 
+        [Required(ErrorMessage = "{0} obrigatório")]
+        [Display(Name = "Salário Base")]
+        [DisplayFormat(DataFormatString ="{0:F2}")]
+        [Range(1045.0, 50000.0, ErrorMessage = "{0} deve ser entre {1} to {2}")]
         public double SalarioBase { get; set; }
 
         public Departamento Departamento { get; set; }
