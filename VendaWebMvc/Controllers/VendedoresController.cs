@@ -59,13 +59,13 @@ namespace VendaWebMvc.Controllers
         {
             if(id == null)
             {
-                return RedirectToAction(nameof(Erro), new {mensagem = "ID NÃO FORNECIDO" });
+                return RedirectToAction(nameof(Error), new {mensagem = "ID NÃO FORNECIDO" });
             }
 
             var obj = await _servicoVendedor.EncontrarPorIdAsync(id.Value);
             if(obj == null)
             {
-                return RedirectToAction(nameof(Erro), new { mensagem = "ID NÃO ENCONTRADO" });
+                return RedirectToAction(nameof(Error), new { mensagem = "ID NÃO ENCONTRADO" });
             }
 
             return View(obj);
@@ -75,8 +75,15 @@ namespace VendaWebMvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Deletar(int id)
         {
-             await _servicoVendedor.RemoverAsync(id);
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                await _servicoVendedor.RemoverAsync(id);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (IntegridadeExcecao e)
+            {
+                return RedirectToAction(nameof(Error), new { message = e.Message });
+            }
 
         }
 
@@ -84,13 +91,13 @@ namespace VendaWebMvc.Controllers
         {
             if (id == null)
             {
-                return RedirectToAction(nameof(Erro), new { mensagem = "ID NÃO FORNECIDO" });
+                return RedirectToAction(nameof(Error), new { mensagem = "ID NÃO FORNECIDO" });
             }
 
             var obj = await _servicoVendedor.EncontrarPorIdAsync(id.Value);
             if (obj == null)
             {
-                return RedirectToAction(nameof(Erro), new { mensagem = "ID NÃO ENCONTRADO" });
+                return RedirectToAction(nameof(Error), new { mensagem = "ID NÃO ENCONTRADO" });
             }
 
             return View(obj);
@@ -100,13 +107,13 @@ namespace VendaWebMvc.Controllers
         {
             if(id == null)
             {
-                return RedirectToAction(nameof(Erro), new { mensagem = "ID NÃO FORNECIDO" });
+                return RedirectToAction(nameof(Error), new { mensagem = "ID NÃO FORNECIDO" });
             }
 
             var obj = await _servicoVendedor.EncontrarPorIdAsync(id.Value);
             if(obj == null)
             {
-                return RedirectToAction(nameof(Erro), new { mensagem = "ID NÃO ENCONTRADO" });
+                return RedirectToAction(nameof(Error), new { mensagem = "ID NÃO ENCONTRADO" });
             }
 
             List<Departamento> departamento = await _departamentoService.ListarDepartamentoAsync();
@@ -126,7 +133,7 @@ namespace VendaWebMvc.Controllers
             }
             if (id != vendedor.Id)
             {
-                return RedirectToAction(nameof(Erro), new { mensagem = "ID NÃO CORRESPONDE" });
+                return RedirectToAction(nameof(Error), new { mensagem = "ID NÃO CORRESPONDE" });
             }
 
             try
@@ -136,19 +143,19 @@ namespace VendaWebMvc.Controllers
             }
             catch (NotFoundException e)
             {
-                return RedirectToAction(nameof(Erro), new { mensagem = e.Message });
+                return RedirectToAction(nameof(Error), new { mensagem = e.Message });
             }
             catch (DbConcurrencyException e)
             {
-                return RedirectToAction(nameof(Erro), new { mensagem = e.Message });
+                return RedirectToAction(nameof(Error), new { mensagem = e.Message });
             }
         }
 
-        public IActionResult Erro(string mensagem)
+        public IActionResult Error(string mensagem)
         {
             var viewModel = new ErrorViewModel
             {
-                Mensagem = mensagem,
+                Message = mensagem,
                 RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
             };
             return View(viewModel);

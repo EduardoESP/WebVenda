@@ -39,9 +39,16 @@ namespace VendaWebMvc.Services
 
         public async Task RemoverAsync(int id)
         {
-            var obj = await _contexto.Vendedor.FindAsync(id);
-            _contexto.Vendedor.Remove(obj);
-            await _contexto.SaveChangesAsync();
+            try
+            {
+                var obj = await _contexto.Vendedor.FindAsync(id);
+                _contexto.Vendedor.Remove(obj);
+                await _contexto.SaveChangesAsync();
+            }
+            catch (DbUpdateException e)
+            {
+                throw new IntegridadeExcecao("Este Vendedor tem venda registrada e não pode ser deletado.");
+            }
         }
 
         public async Task UpdateAsync(Vendedor obj)
