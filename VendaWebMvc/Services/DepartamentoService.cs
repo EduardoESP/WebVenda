@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using VendaWebMvc.Data;
 using VendaWebMvc.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace VendaWebMvc.Services
 {
@@ -16,9 +17,9 @@ namespace VendaWebMvc.Services
             _contexto = contexto;
         }
 
-        public List<Departamento> ListarDepartamento()
+        public async Task<List<Departamento>> ListarDepartamentoAsync()
         {
-           return _contexto.Departamento.OrderBy(x => x.Nome).ToList();
+           return await _contexto.Departamento.OrderBy(x => x.Nome).ToListAsync();
         }
 
     }
