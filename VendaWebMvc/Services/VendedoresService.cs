@@ -22,7 +22,7 @@ namespace VendaWebMvc.Services
 
         public async Task<List<Vendedor>> ListarVendedoresAsync()
         {
-            return await _contexto.Vendedor.ToListAsync();
+            return await _contexto.Vendedor.OrderBy(x => x.Nome).ToListAsync();
         }
 
         public async Task InserirAsync(Vendedor obj)

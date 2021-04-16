@@ -362,3 +362,4 @@ C:\Users\eduardosantana.OCYAN\Desktop\WebVenda\VendaWebMvc\obj\Debug\netcoreapp3
 C:\Users\eduardosantana.OCYAN\Desktop\WebVenda\VendaWebMvc\obj\Debug\netcoreapp3.1\Razor\Views\RegistroVendas\Index.cshtml.g.cs
 C:\Users\eduardosantana.OCYAN\Desktop\WebVenda\VendaWebMvc\obj\Debug\netcoreapp3.1\Razor\Views\RegistroVendas\BuscaSimples.cshtml.g.cs
 C:\Users\eduardosantana.OCYAN\Desktop\WebVenda\VendaWebMvc\obj\Debug\netcoreapp3.1\Razor\Views\RegistroVendas\BuscaGrupo.cshtml.g.cs
+C:\Users\eduardosantana.OCYAN\Desktop\WebVenda\VendaWebMvc\obj\Debug\netcoreapp3.1\Razor\Views\RegistroVendas\Criar.cshtml.g.cs

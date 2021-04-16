@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using VendaWebMvc.Models;
+using VendaWebMvc.Models.Enums;
 
 namespace VendaWebMvc.Data
 {
@@ -19,6 +20,8 @@ namespace VendaWebMvc.Data
         public DbSet<RegistroVendas> RegistroVendas { get; set; }
 
       
+
+
 
     }
 }

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace VendaWebMvc.Models
 {
     public class Vendedor
-    {
+    {   [Key()]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "{0} obrigatório")]
@@ -30,10 +31,11 @@ namespace VendaWebMvc.Models
         [Range(1045.0, 50000.0, ErrorMessage = "{0} deve ser entre {1} to {2}")]
         public double SalarioBase { get; set; }
 
-        public Departamento Departamento { get; set; }
-
+        [ForeignKey("Departamento")]
         public int DepartamentoId { get; set; }
+        public virtual Departamento Departamento { get; set; }
 
+       
         public ICollection<RegistroVendas> Vendas { get; set; } = new List<RegistroVendas>();
 
         public Vendedor()

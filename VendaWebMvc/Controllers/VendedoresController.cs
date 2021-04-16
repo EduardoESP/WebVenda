@@ -32,6 +32,7 @@ namespace VendaWebMvc.Controllers
             return View(list);
         }
 
+        //*****************************************************************************************************
         public async Task<IActionResult> Criar()
          {
             
@@ -54,7 +55,7 @@ namespace VendaWebMvc.Controllers
             return RedirectToAction("Index");
 
         }
-
+        //*****************************************************************************************************
         public async Task<IActionResult> Deletar(int? id)
         {
             if(id == null)
